@@ -1,5 +1,5 @@
 {
-  "name": "text-exploder-two",
+  "name": "sequencer",
   "version": "1.0.0",
   "description": "",
   "main": "build/index.js",
@@ -15,12 +15,7 @@
     "type": "git",
     "url": ""
   },
-  "keywords": [
-    "filter",
-    "filtering",
-    "sensitive",
-    "words"
-  ],
+  "keywords": [],
   "author": "Augustine von Trapp",
   "license": "ISC",
   "bugs": {
