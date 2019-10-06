@@ -1,5 +1,5 @@
 {
-  "name": "sequencer",
+  "name": "graph-utils",
   "version": "1.0.0",
   "description": "",
   "main": "build/index.js",
@@ -22,20 +22,16 @@
     "url": ""
   },
   "homepage": "",
-  "peerDependencies": {
-    "react": "^16.9.0"
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
-    "@babel/preset-react": "^7.0.0",
-    "babel-plugin-react-css-modules": "^5.2.6",
     "jest": "^24.9.0",
     "np": "^5.0.3",
     "watch": "^1.0.2"
   },
   "dependencies": {
-    "styled-components": "^4.4.0"
+    "uuid": "^3.3.3"
   }
 }
