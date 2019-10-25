@@ -11,6 +11,11 @@
     "prepare": "npm run build ",
     "release": "np"
   },
+  "jest": {
+    "roots": [
+      "src"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": ""

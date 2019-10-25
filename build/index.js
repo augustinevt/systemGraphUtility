@@ -33,10 +33,13 @@ var Graph =
 /*#__PURE__*/
 function () {
   function Graph() {
+    var adjacencyList = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
     _classCallCheck(this, Graph);
 
-    this.adjacencyList = {};
-    this.root = null;
+    this.adjacencyList = adjacencyList;
+    this.root = root;
   }
 
   _createClass(Graph, [{
@@ -253,6 +256,31 @@ function () {
           });
         });
       });
+      return this.adjacencyList;
+    }
+  }, {
+    key: "convertToArrays",
+    value: function convertToArrays() {
+      // const check = {}
+      var nodes = [];
+      var links = [];
+
+      for (var key in this.adjacencyList) {
+        nodes.push(this.adjacencyList[key]);
+      }
+
+      nodes.forEach(function (node) {
+        node.edges.forEach(function (edge) {
+          links.push({
+            source: node.id,
+            target: edge
+          });
+        });
+      });
+      return {
+        nodes: nodes,
+        links: links
+      };
     }
   }, {
     key: "print",

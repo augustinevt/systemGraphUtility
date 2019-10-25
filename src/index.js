@@ -2,9 +2,9 @@ import uuid from 'uuid'
 
 export default class Graph {
 
-  constructor() {
-    this.adjacencyList = {}
-    this.root = null
+  constructor(adjacencyList={}, root=null) {
+    this.adjacencyList = adjacencyList
+    this.root = root
   }
 
   addNode(node) {
@@ -181,8 +181,31 @@ export default class Graph {
         }
       })
     }))
+
+    return this.adjacencyList
   }
 
+  convertToArrays() {
+
+    // const check = {}
+    const nodes = []
+    const links = []
+
+    for(const key in this.adjacencyList) {
+      nodes.push(this.adjacencyList[key])
+    }
+
+    nodes.forEach((node) => {
+      node.edges.forEach(edge => {
+        links.push({source: node.id, target: edge})
+      })
+    })
+
+    return {
+      nodes,
+      links,
+    }
+  }
 
   print() {
     Object.keys(this.adjacencyList).forEach((id) => {
@@ -194,4 +217,3 @@ export default class Graph {
     console.log(this.adjacencyList[id])
   }
 }
-
